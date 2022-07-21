@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Transform _headTransform;
+    [SerializeField] private Animator _playerAnimator;
 
     public int CheckedPointCount { get; private set; }
     private List<Transform> _destinationPoints;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void MoveToNextPoint()
     {
+        ChangeMovementAnimation();
         _agent.isStopped = false;
         if (_destinationPoints.Count > CheckedPointCount)
         {
@@ -51,7 +53,14 @@ public class PlayerController : MonoBehaviour
             }
             _agent.destination = _destinationPoints[CheckedPointCount].position;
             CheckedPointCount++;
+           
         }
+    }
+
+    public void HitOnPlayer()   /// Гравець програв
+    {
+        MainController._main.EndGame();
+        StopAiming();
     }
 
     public void Shot()
@@ -85,37 +94,51 @@ public class PlayerController : MonoBehaviour
     public void LookAtNextEnemy()
     {
         _agent.isStopped = true;
-
-        Vector3 enemyPosition = EnemyController._enemyController.GetCurrentEnemy().transform.position;
-
-        StartCoroutine(LookAtEnemy(enemyPosition));
-        //transform.Rotate(new Vector3(transform.rotation.x, 180 * CheckedPointCount, transform.rotation.z));
-        Aiming();
-    }
-
-    private IEnumerator LookAtEnemy(Vector3 enemy)
-    {
-        for (int i = 0; i < 4; i++)
+        if (EnemyController._enemyController.GetCurrentEnemy() != null)
         {
-            transform.LookAt(enemy, Vector3.up);
-            yield return new WaitForEndOfFrame();
+            Transform enemyPosition = EnemyController._enemyController.GetCurrentEnemy().transform;
+
+            StartCoroutine(LookAtEnemy(enemyPosition));
+            //transform.Rotate(new Vector3(transform.rotation.x, 180 * CheckedPointCount, transform.rotation.z));
+            Aiming();
         }
-        //Quaternion a = transform.rotation;
-        //Vector3 pos = new Vector3(enemy.x, transform.position.y, enemy.z);
-        //float yAngle = Vector3.SignedAngle(transform.forward, (pos - transform.position), Vector3.up);
-        //Quaternion b = Quaternion.Euler(0, yAngle, 0);
-
-        //float t = 0;
-        //while (true)
-        //{
-        //    if (t > 1)
-        //    {
-        //        yield break;
-        //    }
-        //    transform.rotation = Quaternion.Lerp(a, b, t);
-        //    t += _rotationSpeed;
-        //    yield return new WaitForEndOfFrame();
-
-        //}
     }
+
+    private IEnumerator LookAtEnemy(Transform enemy)
+    {
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    transform.LookAt(enemy, Vector3.up);
+        //    yield return new WaitForEndOfFrame();
+        //}
+        Quaternion a = transform.rotation;
+        Vector3 pos = new Vector3(enemy.position.x, transform.position.y, enemy.position.z);
+        Vector3 heading = enemy.position - transform.position;
+        float distance = heading.magnitude;
+
+        Vector3 direction = heading / distance;
+
+        float yAngle = Vector3.SignedAngle(transform.forward, direction, Vector3.up);
+        Quaternion b = Quaternion.Euler(0, -180*CheckedPointCount, 0);
+
+        float t = 0;
+        while (true)
+        {
+            if (t > 1+_rotationSpeed)
+            {
+                yield break;
+            }
+            transform.rotation = Quaternion.Lerp(a, b, t);
+            t += _rotationSpeed;
+            yield return new WaitForEndOfFrame();
+
+        }
+    }
+
+    public void ChangeMovementAnimation()
+    {
+        _playerAnimator.SetBool("IsMove", !_playerAnimator.GetBool("IsMove"));
+    }
+
+    
 }

@@ -9,44 +9,74 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform _bulletSpawnPosition;
     [SerializeField] private GameObject _bullet;
     [SerializeField] private float _shotAngle;
+    [SerializeField] private Animator _enemyAnimator;
+
+    //[SerializeField] private float _bossHp;
+    //[SerializeField] private string _bossName;
 
     private NavMeshAgent _agent;
     private List<Transform> _destinationPoints;
 
     public bool IsOnPoint { get; set; }
 
+    public float BossHp { get; set; }
+    public string BossName { get; set; }
+
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
         _destinationPoints = LevelController._levelController.GetEnemyDestinationPoints();
         Bullet.OnMiss.AddListener(Shot);
-        IsOnPoint = false;
+        IsOnPoint = true;
+        if (_type == EnemyController.EnemyType.Boss)
+        {
+           
+            CanvasController._canvasController.SetBossInfo(BossHp, BossName);
+        }
+        
     }
+
+    
 
     private void Update()
     {
         if (IsOnPoint)
         {
-            transform.LookAt(PlayerController._player.gameObject.transform.position, Vector3.up);
-            transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, 0);
+            Vector3 LookAtPosition = new Vector3(PlayerController._player.gameObject.transform.position.x, transform.position.y, PlayerController._player.gameObject.transform.position.z);
+            transform.LookAt(LookAtPosition, Vector3.up);
+            //transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
         }
     }
 
-
-    public void ShotOnEnemy()
+    public void ShotOnEnemy(float damage)
     {
         if (_type != EnemyController.EnemyType.Boss)
         {
             PlayerController._player.MoveToNextPoint();
             EnemyController._enemyController.ShotInEnemy();
 
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         else
         {
-            MoveToNextPoint();
-            PlayerController._player.MoveToNextPoint();
+            CanvasController._canvasController.ChangeBossHp(damage);
+            BossHp -= damage;
+            
+            if (BossHp <= 0)
+            {
+                KillTheBoss();
+            }
+            else
+            {
+                MoveToNextPoint();
+                PlayerController._player.MoveToNextPoint();
+            }
         }
+    }
+
+    public void KillTheBoss()
+    {
+        Destroy(gameObject);
     }
 
     public void Shot()
@@ -71,15 +101,27 @@ public class Enemy : MonoBehaviour
 
     public void MoveToNextPoint()
     {
+        ChangeMovementAnimation();
         IsOnPoint = false;
         _agent.isStopped = false;
-       
+        
         _agent.destination = _destinationPoints[PlayerController._player.CheckedPointCount +1].position;
+       
     }
 
     public EnemyController.EnemyType GetEnemyType()
     {
         return _type;
+    }
+
+    public void SetEnemyType(EnemyController.EnemyType type)
+    {
+        _type = type;
+    }
+
+    public void ChangeMovementAnimation()
+    {
+        _enemyAnimator.SetBool("IsMove", !_enemyAnimator.GetBool("IsMove"));
     }
 
 }

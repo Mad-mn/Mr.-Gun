@@ -6,14 +6,24 @@ using UnityEngine.Events;
 
 public class MainController : MonoBehaviour
 {
+    public static MainController _main;
     public static UnityEvent OnStartGame = new UnityEvent();
+    public static UnityEvent OnLoseGame = new UnityEvent();
 
     [SerializeField] private PlayerController _player;
 
     private bool _isGamePlayed;
 
     private bool _isTouch;
-    
+
+    private void Awake()
+    {
+        if(_main == null)
+        {
+            _main = this;
+        }
+    }
+
     private void Update()
     {
 #if UNITY_EDITOR
@@ -62,6 +72,7 @@ public class MainController : MonoBehaviour
 
     public void EndGame()
     {
-        _isGamePlayed = false;
+        OnLoseGame.Invoke();
+        //_isGamePlayed = false;
     }
 }

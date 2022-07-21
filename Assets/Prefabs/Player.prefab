@@ -52,9 +52,10 @@ MonoBehaviour:
   _agent: {fileID: 5093876341143597166}
   _bullet: {fileID: 8771166857697756448, guid: 3a4c1d9c217c17d42b7660fe1d13d4e9, type: 3}
   _line: {fileID: 4039143756279481229}
-  _bulletSpeed: 15
-  _rotationSpeed: 0
+  _bulletSpeed: 25
+  _rotationSpeed: 0.1
   _headTransform: {fileID: 6950189738796645350}
+  _playerAnimator: {fileID: 4642474642611591373}
 --- !u!195 &5093876341143597166
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -403,5 +404,10 @@ PrefabInstance:
 --- !u!4 &4642474642601785089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8674084407324059992, guid: 1d23ac608e9307644b9e50a69374b134, type: 3}
+  m_PrefabInstance: {fileID: 4039143756002729561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4642474642611591373 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8674084407333144212, guid: 1d23ac608e9307644b9e50a69374b134, type: 3}
   m_PrefabInstance: {fileID: 4039143756002729561}
   m_PrefabAsset: {fileID: 0}

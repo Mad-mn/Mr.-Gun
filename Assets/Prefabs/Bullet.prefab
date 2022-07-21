@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d517fb592b0eb5b44b51c3e11d93609b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _headShotCoinPrice: 1
+  _headShotDamage: 2
+  _bodyShotDamage: 1

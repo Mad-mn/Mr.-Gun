@@ -11,14 +11,16 @@ public class DestinationPoint : MonoBehaviour
             if (!LevelController._levelController.IsLastPoint())
             {
                 other.GetComponent<PlayerController>().LookAtNextEnemy();
+                other.GetComponent<PlayerController>().ChangeMovementAnimation();
             }
         }
         if (other.CompareTag("Enemy"))
         {
-            Enemy enemy= other.GetComponent<Enemy>();
-            if(enemy.GetEnemyType() == EnemyController.EnemyType.Boss)
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy.GetEnemyType() == EnemyController.EnemyType.Boss)
             {
-                
+
+                enemy.ChangeMovementAnimation();
                 enemy.IsOnPoint = true;
             }
         }
