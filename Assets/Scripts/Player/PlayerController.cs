@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = heading / distance;
 
         float yAngle = Vector3.SignedAngle(transform.forward, direction, Vector3.up);
-        Quaternion b = Quaternion.Euler(0, -180*CheckedPointCount, 0);
+        Quaternion b = Quaternion.Euler(0, -90*CheckedPointCount, 0);
 
         float t = 0;
         while (true)

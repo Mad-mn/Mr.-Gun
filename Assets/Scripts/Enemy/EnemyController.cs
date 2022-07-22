@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     {
         MainController.OnStartGame.AddListener(OnNextEnemy);
         MainController.OnStartGame.AddListener(SpawnEnemy);
-        _enemySpawnPoints = LevelController._levelController.GetEnemyDestinationPoints();
+        _enemySpawnPoints = LevelController._levelController.GetDestinationPoints();
 
     }
 
@@ -79,7 +79,7 @@ public class EnemyController : MonoBehaviour
         _enemies.Add(enemyObj);
 
         GameObject point = _enemySpawnPoints[PlayerController._player.CheckedPointCount].gameObject;
-        point.SetActive(false);
+        point.GetComponent<DestinationPoint>().IsActiveToEnemy = false;
     }
 
     public enum EnemyType { Single, Boss}
