@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Transform _headTransform;
     [SerializeField] private Animator _playerAnimator;
+    [SerializeField] private Transform _headBone;
+    [SerializeField] private GameObject _cactusInAss;
+    [SerializeField] private GameObject _firework;
+    [SerializeField] private GameObject _flash;
+    [SerializeField] private GameObject _pumpkin;
 
     public int CheckedPointCount { get; private set; }
     private List<Transform> _destinationPoints;
@@ -40,7 +45,19 @@ public class PlayerController : MonoBehaviour
         MainController.OnStartGame.AddListener(Aiming);
     }
 
-    public void MoveToNextPoint()
+    public void MoveToNextPoint(bool isBoss)
+    {
+        if (isBoss)
+        {
+            MoveToNext();
+        }
+        else
+        {
+            Invoke("MoveToNext", 0.5f);
+        }
+    }
+
+    private void MoveToNext()
     {
         ChangeMovementAnimation();
         _agent.isStopped = false;
@@ -48,17 +65,18 @@ public class PlayerController : MonoBehaviour
         {
             if (IsAiming)
             {
-                
+
                 StopAiming();
             }
             _agent.destination = _destinationPoints[CheckedPointCount].position;
             CheckedPointCount++;
-           
+
         }
     }
 
-    public void HitOnPlayer()   /// Гравець програв
+    public void HitOnPlayer(Bullet.BulletType bulletType)   /// Гравець програв
     {
+        OnDeatAnimation(bulletType);
         MainController._main.EndGame();
         StopAiming();
     }
@@ -68,9 +86,10 @@ public class PlayerController : MonoBehaviour
         Vector3 vector = _line.GetComponent<AimLine>().GetVector().normalized;
         Vector3 spawnPosition = _line.GetComponent<AimLine>().GetBulletSpawnPosition();
         //StopAiming();
-        GameObject bullet = Instantiate(_bullet, spawnPosition, Quaternion.identity);
+        
+            GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, spawnPosition, Quaternion.identity);
 
-        bullet.GetComponent<Rigidbody>().AddForce(vector * _bulletSpeed, ForceMode.Impulse);
+            bullet.GetComponent<Rigidbody>().AddForce(vector * _bulletSpeed, ForceMode.Impulse);
         
     }
 
@@ -119,7 +138,7 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = heading / distance;
 
         float yAngle = Vector3.SignedAngle(transform.forward, direction, Vector3.up);
-        Quaternion b = Quaternion.Euler(0, -90*CheckedPointCount, 0);
+        Quaternion b = Quaternion.Euler(0, -180*CheckedPointCount, 0);
 
         float t = 0;
         while (true)
@@ -140,5 +159,75 @@ public class PlayerController : MonoBehaviour
         _playerAnimator.SetBool("IsMove", !_playerAnimator.GetBool("IsMove"));
     }
 
-    
+    public void SetBoneforBullet(GameObject bullet)
+    {
+        bullet.transform.parent = _headBone;
+    }
+
+    public void OnDeatAnimation(Bullet.BulletType bulletType)
+    {
+        
+        _playerAnimator.applyRootMotion = true;
+        switch (bulletType)
+        {
+            case Bullet.BulletType.BoxingGlove:
+                _playerAnimator.SetBool("IsDeath", true);
+                break;
+            case Bullet.BulletType.ButcherKnife:
+                _playerAnimator.SetBool("IsKnife", true);
+                break;
+            case Bullet.BulletType.Cactus:
+                _playerAnimator.SetBool("IsCactus", true);
+                break;
+            case Bullet.BulletType.Cake:
+                _playerAnimator.SetBool("IsCake", true);
+                break;
+            case Bullet.BulletType.BlueBottle:
+                _playerAnimator.SetBool("IsBlueBottle", true);
+                break;
+            case Bullet.BulletType.GreenBottle:
+                _playerAnimator.SetBool("IsGreenBottle", true);
+                break;
+            case Bullet.BulletType.Firework:
+                _playerAnimator.SetBool("IsFirework", true);
+                break;
+            case Bullet.BulletType.Banana:
+                _playerAnimator.SetBool("IsBanana", true);
+                break;
+            case Bullet.BulletType.Onion:
+                _playerAnimator.SetBool("IsOnion", true);
+                break;
+            case Bullet.BulletType.Flash:
+                _playerAnimator.SetBool("IsFlash", true);
+                break;
+            case Bullet.BulletType.Pumpkin:
+                _playerAnimator.SetBool("IsPumpkin", true);
+                break;
+        }
+    }
+
+    public Transform GetHeadBone()
+    {
+        return _headBone;
+    }
+
+    public void EnableCactusInAss()
+    {
+        _cactusInAss.SetActive(true);
+    }
+
+    public void EnableFirework()
+    {
+        _firework.SetActive(true);
+    }
+
+    public void EnableFlash()
+    {
+        _flash.SetActive(true);
+    }
+
+    public void EnablePumpkin()
+    {
+        _pumpkin.SetActive(true);
+    }
 }

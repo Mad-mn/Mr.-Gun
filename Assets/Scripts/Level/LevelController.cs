@@ -10,8 +10,10 @@ public class LevelController : MonoBehaviour
     [SerializeField] private List<Transform> _enemyDestinationPoints;
     [SerializeField] private int _enemyCountInFirstLevel;
     [SerializeField] private float _firstLevelBossHp;
+    [SerializeField] private List <GameObject> _stairBlocks;
 
     private int _levelId;
+    public int NextStairCount { get; set; }
 
     private void Awake()
     {
@@ -38,7 +40,7 @@ public class LevelController : MonoBehaviour
 
     public int GetLevelId()
     {
-        return SceneManager.GetActiveScene().buildIndex +1 ;
+        return SceneManager.GetActiveScene().buildIndex + 1 ;
     }
 
     public int GetSingleEnemyCount()
@@ -54,5 +56,16 @@ public class LevelController : MonoBehaviour
     public string GetBossName()
     {
         return "Bob";
+    }
+
+    public void EnableStairs(int count)
+    {
+        NextStairCount = count;
+        Invoke("OnStairs", 1f);
+    }
+
+    public void OnStairs()
+    {
+        _stairBlocks[NextStairCount].SetActive(true);
     }
 }

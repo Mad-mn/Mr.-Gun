@@ -12,8 +12,11 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject _addScorePanel;
     [SerializeField] private GameObject _bossHpPanel;
     [SerializeField] private GameObject _losePanel;
+    [SerializeField] private GameObject _levelProggressBar;
 
     private BossHpBar _bossHpBar;
+    private LevelProggressBar _lPB;
+    
 
     private void Awake()
     {
@@ -28,6 +31,7 @@ public class CanvasController : MonoBehaviour
         MainController.OnStartGame.AddListener(StartGame);
         MainController.OnLoseGame.AddListener(EnebleLosePanel);
         _bossHpBar = _bossHpPanel.GetComponent<BossHpBar>();
+        _lPB = _levelProggressBar.GetComponent<LevelProggressBar>();
     }
 
     public void StartGame()
@@ -64,6 +68,17 @@ public class CanvasController : MonoBehaviour
 
     public void EnebleLosePanel()
     {
+        _levelProggressBar.SetActive(false);
         _losePanel.SetActive(true);
+    }
+
+    public void FillLevelProggress()
+    {
+        
+        _lPB.Fill();
+        if(GameSessionController._sessionController.LastSingleEnemy == 0)
+        {
+            _levelProggressBar.SetActive(false);
+        }
     }
 }

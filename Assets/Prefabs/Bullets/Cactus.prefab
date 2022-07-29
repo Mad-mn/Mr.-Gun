@@ -65,6 +65,9 @@ MonoBehaviour:
   _headShotDamage: 2
   _bodyShotDamage: 1
   _type: 3
+  _bulletCollider: {fileID: 1273239861132176910}
+  _poisinCloud: {fileID: 0}
+  _bulletAnimation: {fileID: 6257491581179076257}
 --- !u!1 &2738512617949891889
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +160,7 @@ GameObject:
   - component: {fileID: 1614996144711884037}
   - component: {fileID: 4932750410784156038}
   - component: {fileID: 232582774346347659}
-  - component: {fileID: 2879142485426450671}
+  - component: {fileID: 1273239861132176910}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -229,8 +232,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2879142485426450671
-MeshCollider:
+--- !u!136 &1273239861132176910
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -239,10 +242,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2124705421725058983, guid: 073c80f460149224492452aca7eb4a1f, type: 3}
+  m_Radius: 0.016696695
+  m_Height: 0.07840569
+  m_Direction: 2
+  m_Center: {x: 0.0043794625, y: -0.0011621478, z: 0.019169696}
 --- !u!1 &6383685208280696612
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +257,7 @@ GameObject:
   - component: {fileID: 4818002275208740360}
   - component: {fileID: 7266475258152922592}
   - component: {fileID: 8457366050110254779}
+  - component: {fileID: 6257491581179076257}
   m_Layer: 0
   m_Name: Group_002
   m_TagString: Untagged
@@ -275,7 +279,7 @@ Transform:
   - {fileID: 8385876639195476764}
   m_Father: {fileID: 5770437682917888637}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 72}
 --- !u!33 &7266475258152922592
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -325,6 +329,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!111 &6257491581179076257
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383685208280696612}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a45efa3dd3781aa499804ec9104b862d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a45efa3dd3781aa499804ec9104b862d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8385876639195476767
 GameObject:
   m_ObjectHideFlags: 0

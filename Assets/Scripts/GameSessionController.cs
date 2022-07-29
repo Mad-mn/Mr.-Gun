@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSessionController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameSessionController : MonoBehaviour
     [SerializeField] private int _bodyScoreHit, _headScoreHit;
 
     public int Score { get; private set; }
+    public int LastSingleEnemy { get; set; }
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class GameSessionController : MonoBehaviour
     private void Start()
     {
         MainController.OnLoseGame.AddListener(CheckBestScore);
+        LastSingleEnemy = LevelController._levelController.GetSingleEnemyCount();
     }
 
     public void ShotOnEnemy(bool isHead)
@@ -44,6 +47,19 @@ public class GameSessionController : MonoBehaviour
         if(Score > PlayerInfo._playerInfo.BestScore)
         {
             PlayerInfo._playerInfo.BestScore = Score;
+        }
+    }
+
+    public void KillTheBoss()
+    {
+        Invoke("GoToNextLevel", 2f);
+    }
+
+    private void GoToNextLevel()
+    {
+        if (SceneManager.sceneCount >= SceneManager.GetActiveScene().buildIndex+1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

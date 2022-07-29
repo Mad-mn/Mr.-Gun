@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     {
         MainController.OnStartGame.AddListener(OnNextEnemy);
         MainController.OnStartGame.AddListener(SpawnEnemy);
-        _enemySpawnPoints = LevelController._levelController.GetDestinationPoints();
+        _enemySpawnPoints = LevelController._levelController.GetEnemyDestinationPoints();
 
     }
 
@@ -35,7 +35,9 @@ public class EnemyController : MonoBehaviour
 
     public void ShotInEnemy()
     {
-        SpawnEnemy();
+        Invoke("SpawnEnemy", 1f);
+        LevelController._levelController.EnableStairs(EnemyChechedCount +1);
+
         EnemyChechedCount++;
         //OnNextEnemy();
     }
@@ -57,16 +59,11 @@ public class EnemyController : MonoBehaviour
     {
        
         Vector3 spawnPoint;
-        //if (_enemies.Count == 0)
-        //{
-        //    spawnPoint = _enemySpawnPoints[PlayerController._player.CheckedPointCount].position;
-        //}
-        //else
-        //{
-        //    spawnPoint = _enemySpawnPoints[PlayerController._player.CheckedPointCount].position;
-        //}
+       
         spawnPoint = _enemySpawnPoints[PlayerController._player.CheckedPointCount].position;
-        
+
+        GameObject point = _enemySpawnPoints[PlayerController._player.CheckedPointCount].gameObject;
+        Destroy(point);
         GameObject enemyObj = Instantiate(_enemyPrefab, spawnPoint, Quaternion.identity);
         
         if (_enemies.Count == LevelController._levelController.GetSingleEnemyCount())  /// Створюємо боса
@@ -78,8 +75,7 @@ public class EnemyController : MonoBehaviour
         }
         _enemies.Add(enemyObj);
 
-        GameObject point = _enemySpawnPoints[PlayerController._player.CheckedPointCount].gameObject;
-        point.GetComponent<DestinationPoint>().IsActiveToEnemy = false;
+       
     }
 
     public enum EnemyType { Single, Boss}

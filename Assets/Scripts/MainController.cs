@@ -24,46 +24,62 @@ public class MainController : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-#if UNITY_EDITOR
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (!_isGamePlayed)
-            {
-                StartGame();
-            }
-            else
-            {
-                if (_player.IsAiming)
-                {
-                    _player.Shot();
-                }
-            }
-        }
+//    private void Update()
+//    {
+//#if UNITY_EDITOR
+//        if (Input.GetMouseButtonDown(0))
+//        {
+//            if (!_isGamePlayed)
+//            {
+//                StartGame();
+//            }
+//            else
+//            {
+//                if (_player.IsAiming)
+//                {
+//                    _player.Shot();
+//                }
+//            }
+//        }
 
-#elif UNITY_ANDROID
-         if (Input.touchCount > 0 && !_isTouch)
+//#elif UNITY_ANDROID
+//         if (Input.touchCount > 0 && !_isTouch)
+//        {
+//            _isTouch = true;
+//            if (!_isGamePlayed)
+//            {
+//                StartGame();
+//            }
+//            else
+//            {
+//                if (_player.IsAiming)
+//                {
+//                    _player.Shot();
+//                }
+//            }
+//        }
+//        if(Input.touchCount == 0 && _isTouch)
+//        {
+//            _isTouch = false;
+//        }
+//#endif
+//    }
+
+    public void CheckTouchPanel()
+    {
+        if (!_isGamePlayed)
         {
-            _isTouch = true;
-            if (!_isGamePlayed)
+            StartGame();
+        }
+        else
+        {
+            if (_player.IsAiming)
             {
-                StartGame();
-            }
-            else
-            {
-                if (_player.IsAiming)
-                {
-                    _player.Shot();
-                }
+                _player.Shot();
             }
         }
-        if(Input.touchCount == 0 && _isTouch)
-        {
-            _isTouch = false;
-        }
-#endif
     }
+
     public void StartGame()
     {
         OnStartGame.Invoke();

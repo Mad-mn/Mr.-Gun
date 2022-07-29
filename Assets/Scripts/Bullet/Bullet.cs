@@ -10,6 +10,9 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int _headShotCoinPrice;
     [SerializeField] private float _headShotDamage, _bodyShotDamage;
     [SerializeField] private BulletType _type;
+    [SerializeField] private Collider _bulletCollider;
+    [SerializeField] private GameObject _poisinCloud;
+    [SerializeField] private Animation _bulletAnimation;
 
     private bool _isActive = true;
     private Rigidbody _rb;
@@ -23,7 +26,10 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        LookAtVelocity();
+        if (_isActive)
+        {
+            LookAtVelocity();
+        }
     }
 
     private void LookAtVelocity()
@@ -41,17 +47,55 @@ public class Bullet : MonoBehaviour
             _isActive = false;
             if (collision.gameObject.CompareTag("EnemyHead") && !IsEnemyBullet)
             {
+                
                 Enemy enemy = collision.transform.GetComponentInParent<Enemy>();
+                if (_type == BulletType.Cactus)
+                {
+                    enemy.CactusInAss();
+                }
+                if(_type == BulletType.Firework)
+                {
+                    enemy.OnFirework();
+                }
+                if(_type == BulletType.Flash)
+                {
+                    enemy.EnableFlash();
+                }
+                if(_type == BulletType.Pumpkin)
+                {
+                    enemy.EnablePumpkin();
+                }
                 CanvasController._canvasController.AddCoins(_headShotCoinPrice);
-                enemy.ShotOnEnemy(_headShotDamage);
+                enemy.ShotOnEnemy(_headShotDamage, _type);
                 GameSessionController._sessionController.ShotOnEnemy(true);
+                SetBoneForBullet(collision.gameObject, true, true);
+                CreatePoisonCloud(enemy.GetHeadBone());
+                
             }
             else if (collision.gameObject.CompareTag("Enemy") && !IsEnemyBullet)
             {
                 Enemy enemy = collision.transform.GetComponent<Enemy>();
-
-                enemy.ShotOnEnemy(_bodyShotDamage);
+                if (_type == BulletType.Cactus)
+                {
+                    enemy.CactusInAss();
+                }
+                if (_type == BulletType.Firework)
+                {
+                    enemy.OnFirework();
+                }
+                if (_type == BulletType.Flash)
+                {
+                    enemy.EnableFlash();
+                }
+                if (_type == BulletType.Pumpkin)
+                {
+                    enemy.EnablePumpkin();
+                }
+                enemy.ShotOnEnemy(_bodyShotDamage, _type);
                 GameSessionController._sessionController.ShotOnEnemy(false);
+                SetBoneForBullet(collision.gameObject, true, false);
+                CreatePoisonCloud(enemy.GetHeadBone());
+               
             }
             else
             {
@@ -60,21 +104,92 @@ public class Bullet : MonoBehaviour
             if (_type == BulletType.ButcherKnife || _type == BulletType.Cake || _type == BulletType.Cactus)
             {
                 _rb.isKinematic = true;
+                          
             }
-
+            
+            if (_type == BulletType.Firework || _type == BulletType.GreenBottle || _type == BulletType.Cactus || _type == BulletType.Banana || _type == BulletType.Onion || _type == BulletType.Flash || _type == BulletType.Pumpkin)
+            {
+                Destroy(gameObject);
+            }
+            if (_bulletAnimation != null)
+            {
+                _bulletAnimation.Stop();
+            }
         }
         if(_isActive && IsEnemyBullet && collision.gameObject.CompareTag("Player"))
         {
             _isActive = false;
-            PlayerController._player.HitOnPlayer();
-            if (_type == BulletType.ButcherKnife || _type == BulletType.Cake || _type == BulletType.Cactus)
+            if (_type == BulletType.Cactus)
+            {
+                PlayerController._player.EnableCactusInAss();
+            }
+            if (_type == BulletType.Firework)
+            {
+                PlayerController._player.EnableFirework();
+            }
+            if (_type == BulletType.Flash)
+            {
+                PlayerController._player.EnableFlash();
+            }
+            if(_type == BulletType.Pumpkin)
+            {
+                PlayerController._player.EnablePumpkin();
+            }
+            PlayerController._player.HitOnPlayer(_type);
+            SetBoneForBullet(collision.gameObject, false, true);
+            CreatePoisonCloud(PlayerController._player.GetHeadBone());
+            if (_type == BulletType.ButcherKnife || _type == BulletType.Cake)
             {
                 _rb.isKinematic = true;
-                Destroy(gameObject, 0.5f);
+               
+            }
+            
+            if (_type == BulletType.Firework || _type == BulletType.GreenBottle || _type == BulletType.Cactus || _type == BulletType.Banana || _type == BulletType.Onion || _type == BulletType.Flash || _type == BulletType.Pumpkin)
+            {
+                Destroy(gameObject);
+            }
+            if (_bulletAnimation != null)
+            {
+                _bulletAnimation.Stop();
             }
         }
-
         
+        
+    }
+
+    public void SetBoneForBullet(GameObject parent, bool isEnemy, bool isHeadshot)
+    {
+        if(_type == BulletType.ButcherKnife || _type == BulletType.Cake)
+        {
+            _bulletCollider.enabled = false;
+            _rb.isKinematic = true;
+            if (isEnemy)
+            {
+                Enemy enemy;
+                if (isHeadshot)
+                {
+                    enemy = parent.transform.GetComponentInParent<Enemy>();
+                }
+                else
+                {
+                    enemy = parent.GetComponent<Enemy>();
+                }
+                enemy.SetBoneForBullet(gameObject, isHeadshot);
+            }
+            else
+            {
+                PlayerController._player.SetBoneforBullet(gameObject);
+            }
+        }
+        
+    }
+
+    public void CreatePoisonCloud(Transform parent)
+    {
+        if (_type == BulletType.GreenBottle)
+        {
+            GameObject poison = Instantiate(_poisinCloud, parent);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -91,5 +206,10 @@ public class Bullet : MonoBehaviour
         return _isActive;
     }
 
-    public enum BulletType { BoxingGlove, ButcherKnife, Cake, Cactus}
+    public BulletType GetBulletType()
+    {
+        return _type;
+    }
+
+    public enum BulletType { BoxingGlove, ButcherKnife, Cake, Cactus, BlueBottle, GreenBottle, Firework, Banana, Onion, Flash, Pumpkin}
 }
