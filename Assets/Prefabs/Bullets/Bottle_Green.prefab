@@ -4978,6 +4978,8 @@ MonoBehaviour:
   _type: 5
   _bulletCollider: {fileID: 8212975031243609808}
   _poisinCloud: {fileID: 1178894326743412, guid: 042f756de00cb5b4db4d23471365bf39, type: 3}
+  _bulletAnimation: {fileID: 0}
+  _bulletForce: 50
 --- !u!54 &8212975031499119978
 Rigidbody:
   m_ObjectHideFlags: 0

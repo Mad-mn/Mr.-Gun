@@ -162,3 +162,6 @@ MonoBehaviour:
   _bodyShotDamage: 1
   _type: 0
   _bulletCollider: {fileID: 7481245564182598923}
+  _poisinCloud: {fileID: 0}
+  _bulletAnimation: {fileID: 0}
+  _bulletForce: 50

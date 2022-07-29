@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _firework;
     [SerializeField] private GameObject _flash;
     [SerializeField] private GameObject _pumpkin;
+    [SerializeField] private Rigidbody _regdollRb;
+    [SerializeField] private GameObject _gun;
+    [SerializeField] private Transform _gunBulletSpawn;
 
     public int CheckedPointCount { get; private set; }
     private List<Transform> _destinationPoints;
@@ -74,23 +77,62 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void HitOnPlayer(Bullet.BulletType bulletType)   /// Гравець програв
+    public void HitOnPlayer(Bullet.BulletType bulletType, Vector3 direction, float force)   /// Гравець програв
     {
-        OnDeatAnimation(bulletType);
+        //OnDeatAnimation(bulletType);
+        StartCoroutine(OnRegdoll(direction, force));
         MainController._main.EndGame();
         StopAiming();
+    }
+
+    public void OffAnimator()
+    {
+        _playerAnimator.enabled = false;
+    }
+
+    public IEnumerator OnRegdoll(Vector3 direction, float force)
+    {
+        OffAnimator();
+        yield return new WaitForEndOfFrame();
+        _regdollRb.isKinematic = false;
+        _regdollRb.AddForce(direction * force, ForceMode.Impulse);
     }
 
     public void Shot()
     {
         Vector3 vector = _line.GetComponent<AimLine>().GetVector().normalized;
         Vector3 spawnPosition = _line.GetComponent<AimLine>().GetBulletSpawnPosition();
-        //StopAiming();
-        
+
+        Bullet b = PlayerInfo._playerInfo._bullet.GetComponent<Bullet>();
+        if (b.GetBulletType() == Bullet.BulletType.Gun)
+        {
+            _gun.SetActive(true);
+            EnableGunAnimation();
+           
+
+            StartCoroutine(ShotFromGun(vector, spawnPosition));
+        }
+        else
+        {
             GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, spawnPosition, Quaternion.identity);
 
             bullet.GetComponent<Rigidbody>().AddForce(vector * _bulletSpeed, ForceMode.Impulse);
+        }
         
+    }
+
+    private IEnumerator ShotFromGun(Vector3 direction, Vector3 spawn)
+    {
+       
+        yield return new WaitForSeconds(0.5f);
+        GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, spawn, Quaternion.identity);
+
+        bullet.GetComponent<Rigidbody>().AddForce(direction * _bulletSpeed, ForceMode.Impulse);
+        _playerAnimator.SetBool("IsGun", false);
+        _playerAnimator.applyRootMotion = false;
+        yield return new WaitForSeconds(0.3f);
+        _gun.SetActive(false);
+
     }
 
     public Transform GetHeadPosition()
@@ -109,6 +151,13 @@ public class PlayerController : MonoBehaviour
         IsAiming = false;
         _line.SetActive(false);
     }
+    public void EnableGunAnimation()
+    {
+        _playerAnimator.applyRootMotion = true;
+        _playerAnimator.SetBool("IsGun", true);
+    }
+
+    
     
     public void LookAtNextEnemy()
     {

@@ -85,7 +85,7 @@ BoxCollider:
   m_GameObject: {fileID: 4594341103562651575}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.67980796, y: 0.45054245, z: 0.4648327}
   m_Center: {x: -0.011435419, y: 1.4925444, z: -0.03602074}
@@ -182,6 +182,7 @@ MonoBehaviour:
   - {fileID: 8491357936609175031, guid: 6d214f11dedbb054fa44431ba677a65b, type: 3}
   _firework: {fileID: 7061147532057349430}
   _flash: {fileID: 5854982103954560439}
+  _bulletForce: 50
 --- !u!65 &236723804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ BoxCollider:
   m_GameObject: {fileID: 7866943784194107175}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1847515, z: 0.39932072}
   m_Center: {x: -0.0051448345, y: 0.6274662, z: -0.1510734}

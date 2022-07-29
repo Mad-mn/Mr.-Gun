@@ -163,3 +163,4 @@ MonoBehaviour:
   _bulletCollider: {fileID: 7352301762681615321}
   _poisinCloud: {fileID: 0}
   _bulletAnimation: {fileID: 0}
+  _bulletForce: 50

@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private List<GameObject> _enemyPrefabs;
     [SerializeField] private GameObject _firework;
     [SerializeField] private GameObject _flash;
+    [SerializeField] private float _bulletForce;
 
     //[SerializeField] private float _bossHp;
     //[SerializeField] private string _bossName;
@@ -23,8 +24,11 @@ public class Enemy : MonoBehaviour
     private Animator _enemyAnimator;
 
     private Transform _headBone, _bodyBone;
+    private Rigidbody _regdollRb;
     private string _idleName;
     private bool _isRun;
+    private bool isActive = true;
+    private GameObject _gun;
 
     public bool IsOnPoint { get; set; }
 
@@ -45,6 +49,7 @@ public class Enemy : MonoBehaviour
         int rnd = Random.Range(1, 5);
         _idleName = "IsIdle" + rnd;
         CreateRandomEnemy();
+        _gun = _enemyPrefab.GetGun();
     }
 
     
@@ -66,19 +71,23 @@ public class Enemy : MonoBehaviour
         _headBone = _enemyPrefab.GetHeadBone();
         _bodyBone = _enemyPrefab.GetBodyBone();
         _enemyAnimator.SetBool(_idleName, true);
+        _regdollRb = _enemyPrefab.GetRegdollRigidbody();
        
     }
 
-    public void ShotOnEnemy(float damage, Bullet.BulletType bulletType)
+    public void ShotOnEnemy(float damage, Bullet.BulletType bulletType, Vector3 direction, float force)
     {
         if (_type != EnemyController.EnemyType.Boss)
         {
             PlayerController._player.MoveToNextPoint(false);
             EnemyController._enemyController.ShotInEnemy();
-            OnDeathAnimatioon(bulletType);
-            Destroy(gameObject, 1f);
+            //
+            //OnDeathAnimatioon(bulletType);
+            StartCoroutine(OnRegdoll(direction, force));
+           // Destroy(gameObject, 1f);
             GameSessionController._sessionController.LastSingleEnemy--;
             CanvasController._canvasController.FillLevelProggress();
+            isActive = false;
         }
         else
         {
@@ -87,7 +96,7 @@ public class Enemy : MonoBehaviour
             
             if (BossHp <= 0)
             {
-                KillTheBoss(bulletType);
+                KillTheBoss(bulletType, direction, force);
             }
             else
             {
@@ -98,6 +107,19 @@ public class Enemy : MonoBehaviour
                 PlayerController._player.MoveToNextPoint(true);
             }
         }
+    }
+
+    public void OffAnimator()
+    {
+        _enemyAnimator.enabled = false;
+    }
+
+    public IEnumerator OnRegdoll(Vector3 direction, float force)
+    {
+        OffAnimator();
+        yield return new WaitForEndOfFrame();
+        _regdollRb.isKinematic = false;
+        _regdollRb.AddForce(direction * force, ForceMode.Impulse);
     }
 
     public void SetBoneForBullet(GameObject bullet, bool isHeadShot)
@@ -112,33 +134,76 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void KillTheBoss(Bullet.BulletType bulletType)
+    public void KillTheBoss(Bullet.BulletType bulletType, Vector3 direction, float force)
     {
-        OnDeathAnimatioon(bulletType);
-        Destroy(gameObject, 1f);
+        //OnDeathAnimatioon(bulletType);
+        //Destroy(gameObject, 1f);
+        StartCoroutine(OnRegdoll(direction, force));
         GameSessionController._sessionController.KillTheBoss();
+        isActive = false;
     }
 
     
 
     public void Shot()
     {
-        Vector3 fromTo = PlayerController._player.GetHeadPosition().position - transform.position;
-        Vector3 fromToXZ = new Vector3(fromTo.x, 0, fromTo.z);
+        if (isActive)
+        {
+            Vector3 fromTo = PlayerController._player.GetHeadPosition().position - transform.position;
+            Vector3 fromToXZ = new Vector3(fromTo.x, 0, fromTo.z);
 
-        float x = fromToXZ.magnitude;
-        float y = fromTo.y;
+            float x = fromToXZ.magnitude;
+            float y = fromTo.y;
 
-        float angleInRad = _shotAngle * Mathf.PI / 180;
+            float angleInRad = _shotAngle * Mathf.PI / 180;
 
-        float v2 = (Physics.gravity.y * x * x) /( 2 * (y - Mathf.Tan(angleInRad) * x) * Mathf.Pow(Mathf.Cos(angleInRad), 2));
-        float v = Mathf.Sqrt(Mathf.Abs(v2));
+            float v2 = (Physics.gravity.y * x * x) / (2 * (y - Mathf.Tan(angleInRad) * x) * Mathf.Pow(Mathf.Cos(angleInRad), 2));
+            float v = Mathf.Sqrt(Mathf.Abs(v2));
+
+            Vector3 shotDirection = (PlayerController._player.GetHeadPosition().position - transform.position).normalized;
+
+            Bullet b = PlayerInfo._playerInfo._bullet.GetComponent<Bullet>();
+            if (b.GetBulletType() == Bullet.BulletType.Gun)
+            {
+                _gun.SetActive(true);
+                EnableGunAnimation();
 
 
-        GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, _bulletSpawnPosition.position, Quaternion.identity);
-        Vector3 shotDirection = (PlayerController._player.GetHeadPosition().position - transform.position).normalized;
-        bullet.GetComponent<Rigidbody>().AddForce(shotDirection * v, ForceMode.Impulse);
+                StartCoroutine(ShotFromGun(shotDirection, _bulletSpawnPosition.position, v));
+            }
+            else
+            {
+                GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, _bulletSpawnPosition.position, Quaternion.identity);
+
+                bullet.GetComponent<Rigidbody>().AddForce(shotDirection * v, ForceMode.Impulse);
+                bullet.GetComponent<Bullet>().IsEnemyBullet = true;
+            }
+        }
+    }
+
+    private IEnumerator ShotFromGun(Vector3 direction, Vector3 spawn, float bulletSpeed)
+    {
+
+        yield return new WaitForSeconds(0.5f);
+        GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, spawn, Quaternion.identity);
+
+        bullet.GetComponent<Rigidbody>().AddForce(direction * bulletSpeed, ForceMode.Impulse);
         bullet.GetComponent<Bullet>().IsEnemyBullet = true;
+        _enemyAnimator.SetBool("IsGun", false);
+        
+        _enemyAnimator.applyRootMotion = false;
+        yield return new WaitForSeconds(0.3f);
+        _enemyAnimator.SetBool(_idleName, true);
+        _gun.SetActive(false);
+
+    }
+
+    public void EnableGunAnimation()
+    {
+        _enemyAnimator.applyRootMotion = true;
+        _enemyAnimator.SetBool(_idleName, false);
+        _enemyAnimator.SetBool("IsGun", true);
+        
     }
 
     public void MoveToNextPoint()
@@ -222,12 +287,21 @@ public class Enemy : MonoBehaviour
     public void OnFirework()
     {
         _firework.SetActive(true);
+        StartCoroutine(DisableGameObject(_firework));
     }
 
     public void EnableFlash()
     {
         _flash.SetActive(true);
+        StartCoroutine(DisableGameObject(_flash));
     }
+
+    private IEnumerator DisableGameObject(GameObject obj)
+    {
+        yield return new WaitForSeconds(1f);
+        obj.SetActive(false);
+    }
+   
 
     public void EnablePumpkin()
     {

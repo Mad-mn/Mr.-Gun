@@ -180,3 +180,4 @@ MonoBehaviour:
   _bulletCollider: {fileID: 438676670860986461}
   _poisinCloud: {fileID: 0}
   _bulletAnimation: {fileID: 438676670860986460}
+  _bulletForce: 50

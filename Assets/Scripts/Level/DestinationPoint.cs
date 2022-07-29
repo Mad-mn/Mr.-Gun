@@ -20,8 +20,9 @@ public class DestinationPoint : MonoBehaviour
             {
                 if (!LevelController._levelController.IsLastPoint())
                 {
-                    other.GetComponent<PlayerController>().LookAtNextEnemy();
-                    other.GetComponent<PlayerController>().ChangeMovementAnimation();
+                    other.GetComponentInParent<PlayerController>().LookAtNextEnemy();
+                    other.GetComponentInParent<PlayerController>().ChangeMovementAnimation();
+                    Destroy(gameObject);
                 }
             }
         }
@@ -29,12 +30,13 @@ public class DestinationPoint : MonoBehaviour
         {
             if (other.CompareTag("Enemy") && IsActiveToEnemy)
             {
-                Enemy enemy = other.GetComponent<Enemy>();
+                Enemy enemy = other.GetComponentInParent<Enemy>();
                 if (enemy.GetEnemyType() == EnemyController.EnemyType.Boss)
                 {
 
                     enemy.ChangeMovementAnimation();
                     enemy.IsOnPoint = true;
+                    Destroy(gameObject);
                 }
             }
         }
