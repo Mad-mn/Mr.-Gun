@@ -116,13 +116,17 @@ public class Bullet : MonoBehaviour
 
             if (_type == BulletType.Firework || _type == BulletType.GreenBottle || _type == BulletType.Cactus
                 || _type == BulletType.Banana || _type == BulletType.Onion || _type == BulletType.Flash
-                || _type == BulletType.Pumpkin || _type == BulletType.Granade)
+                || _type == BulletType.Pumpkin || _type == BulletType.Granade || _type == BulletType.Beehive)
             {
                 Destroy(gameObject);
             }
             if (_bulletAnimation != null)
             {
                 _bulletAnimation.Stop();
+            }
+            if(LevelController._levelController.GetLevelType() == LevelController.LevelType.FlyingPlatforms)
+            {
+                LevelController._levelController.EnablebPlatform();
             }
            
         }
@@ -161,7 +165,7 @@ public class Bullet : MonoBehaviour
 
             if (_type == BulletType.Firework || _type == BulletType.GreenBottle || _type == BulletType.Cactus
                 || _type == BulletType.Banana || _type == BulletType.Onion || _type == BulletType.Flash
-                || _type == BulletType.Pumpkin || _type == BulletType.Granade)
+                || _type == BulletType.Pumpkin || _type == BulletType.Granade || _type == BulletType.Beehive)
             {
                 Destroy(gameObject);
             }
@@ -170,8 +174,6 @@ public class Bullet : MonoBehaviour
                 _bulletAnimation.Stop();
             }
         }
-        
-        
     }
 
     public void SetBoneForBullet(GameObject parent, bool isEnemy, bool isHeadshot)

@@ -35,6 +35,13 @@ public class Enemy : MonoBehaviour
     public float BossHp { get; set; }
     public string BossName { get; set; }
 
+    public flyingPlatfirm FlyingPlatform { get; set; }
+    public bool IsOnPlatform { get; set; }
+
+    public Swing Swing { get; set; }
+    public Transform SwingPosition { get; set; }
+    public bool IsOnSwing { get; set; }
+
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -50,6 +57,8 @@ public class Enemy : MonoBehaviour
         _idleName = "IsIdle" + rnd;
         CreateRandomEnemy();
         _gun = _enemyPrefab.GetGun();
+        _enemyAnimator.SetBool(_idleName, true);
+        MoveToFirstPoint();
     }
 
     
@@ -61,6 +70,19 @@ public class Enemy : MonoBehaviour
             transform.LookAt(LookAtPosition, Vector3.up);
             //transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
         }
+        if (IsOnPlatform)
+        {
+            MoveWithPlatform();
+        }
+        if (IsOnSwing)
+        {
+            MoveWithSwing();
+        }
+    }
+
+    private void MoveWithSwing()
+    {
+        transform.position = SwingPosition.position + new Vector3(0f, SwingPosition.transform.localScale.y / 4, 0f);
     }
 
     public void CreateRandomEnemy()
@@ -75,16 +97,40 @@ public class Enemy : MonoBehaviour
        
     }
 
+   
+    private void MoveWithPlatform()
+    {
+        transform.position = FlyingPlatform.gameObject.transform.position + new Vector3(0f, FlyingPlatform.transform.localScale.y/4, 0f);
+    }
+
     public void ShotOnEnemy(float damage, Bullet.BulletType bulletType, Vector3 direction, float force)
     {
+        if (Swing != null)
+        {
+            IsOnSwing = false;
+        }
         if (_type != EnemyController.EnemyType.Boss)
         {
-            PlayerController._player.MoveToNextPoint(false);
+            if (LevelController._levelController.GetLevelType() != LevelController.LevelType.FlyingPlatforms)
+            {
+                PlayerController._player.MoveToNextPoint(false);
+            }
+            else
+            {
+                FlyingPlatform.StopMoving();
+            }
+            PlayerController._player.KilledEnemyCount++;
             EnemyController._enemyController.ShotInEnemy();
-            //
-            //OnDeathAnimatioon(bulletType);
-            StartCoroutine(OnRegdoll(direction, force));
-           // Destroy(gameObject, 1f);
+            if(bulletType == Bullet.BulletType.Beehive)
+            {
+                OnDeathAnimatioon(bulletType);
+                Destroy(gameObject, 1f);
+            }
+            else
+            {
+                StartCoroutine(OnRegdoll(direction, force));
+            }
+           
             GameSessionController._sessionController.LastSingleEnemy--;
             CanvasController._canvasController.FillLevelProggress();
             isActive = false;
@@ -93,18 +139,27 @@ public class Enemy : MonoBehaviour
         {
             CanvasController._canvasController.ChangeBossHp(damage);
             BossHp -= damage;
-            
+
+            PlayerController._player.KilledEnemyCount++;
             if (BossHp <= 0)
             {
                 KillTheBoss(bulletType, direction, force);
+                FlyingPlatform.StopMoving();
             }
             else
             {
-                    LevelController._levelController.NextStairCount++;
-                    LevelController._levelController.OnStairs();
+                LevelController._levelController.NextStairCount++;
+                LevelController._levelController.OnStairs();
+                if (LevelController._levelController.GetLevelType() != LevelController.LevelType.FlyingPlatforms)
+                {
                     MoveToNextPoint();
-
-                PlayerController._player.MoveToNextPoint(true);
+                    PlayerController._player.MoveToNextPoint(true);
+                }
+                else
+                {
+                    FlyingPlatform.StopMoving();
+                }
+               
             }
         }
     }
@@ -116,9 +171,11 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator OnRegdoll(Vector3 direction, float force)
     {
+        _agent.enabled = false;
         OffAnimator();
         yield return new WaitForEndOfFrame();
         _regdollRb.isKinematic = false;
+        direction = direction + Vector3.right;
         _regdollRb.AddForce(direction * force, ForceMode.Impulse);
     }
 
@@ -136,9 +193,16 @@ public class Enemy : MonoBehaviour
 
     public void KillTheBoss(Bullet.BulletType bulletType, Vector3 direction, float force)
     {
-        //OnDeathAnimatioon(bulletType);
-        //Destroy(gameObject, 1f);
-        StartCoroutine(OnRegdoll(direction, force));
+        if (bulletType == Bullet.BulletType.Beehive)
+        {
+            OnDeathAnimatioon(bulletType);
+            Destroy(gameObject, 1f);
+        }
+        else
+        {
+            StartCoroutine(OnRegdoll(direction, force));
+        }
+       
         GameSessionController._sessionController.KillTheBoss();
         isActive = false;
     }
@@ -205,14 +269,26 @@ public class Enemy : MonoBehaviour
         _enemyAnimator.SetBool("IsGun", true);
         
     }
-
-    public void MoveToNextPoint()
+    public void MoveToFirstPoint()
     {
         ChangeMovementAnimation();
         IsOnPoint = false;
         _agent.isStopped = false;
+
+        _agent.destination = _destinationPoints[PlayerController._player.KilledEnemyCount].position;
+    }
+
+    public void MoveToNextPoint()
+    {
+        if (Swing != null)
+        {
+            IsOnSwing = false;
+        }
+        ChangeMovementAnimation();
+        IsOnPoint = false;
+        _agent.isStopped = false;
         
-        _agent.destination = _destinationPoints[PlayerController._player.CheckedPointCount +1].position;
+        _agent.destination = _destinationPoints[PlayerController._player.KilledEnemyCount].position;
        
     }
 
@@ -269,6 +345,10 @@ public class Enemy : MonoBehaviour
                 break;
             case Bullet.BulletType.Pumpkin:
                 _enemyAnimator.SetBool("IsPumpkin", true);
+                break;
+            case Bullet.BulletType.Beehive:
+                _enemyAnimator.applyRootMotion = false;
+                _enemyAnimator.SetBool("IsBeehive", true);
                 break;
         }
        

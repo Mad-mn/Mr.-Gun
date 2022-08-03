@@ -8,9 +8,13 @@ public class LevelController : MonoBehaviour
     public static LevelController _levelController;
     [SerializeField] private List<Transform> _destinationPoints;
     [SerializeField] private List<Transform> _enemyDestinationPoints;
+    [SerializeField] private List<Transform> _enemySpawnPoint;
     [SerializeField] private int _enemyCountInFirstLevel;
     [SerializeField] private float _firstLevelBossHp;
     [SerializeField] private List <GameObject> _stairBlocks;
+    [SerializeField] private LevelType _type;
+
+    [SerializeField] private List<GameObject> _platforms;
 
     private int _levelId;
     public int NextStairCount { get; set; }
@@ -21,6 +25,15 @@ public class LevelController : MonoBehaviour
         {
             _levelController = this;
         }
+        foreach(Transform tr in _destinationPoints)
+        {
+            tr.gameObject.SetActive(false);
+        }
+    }
+
+    private void Start()
+    {
+        MainController.OnStartGame.AddListener(EnablePlayerdestinationPoints);
     }
 
     public List<Transform> GetDestinationPoints()
@@ -31,6 +44,19 @@ public class LevelController : MonoBehaviour
     public List<Transform> GetEnemyDestinationPoints()
     {
         return _enemyDestinationPoints;
+    }
+
+    public List<Transform> GetEnemySpawnPoints()
+    {
+        return _enemySpawnPoint;
+    }
+
+    public void EnablePlayerdestinationPoints()
+    {
+        foreach (Transform tr in _destinationPoints)
+        {
+            tr.gameObject.SetActive(true);
+        }
     }
 
     public bool IsLastPoint()
@@ -66,6 +92,26 @@ public class LevelController : MonoBehaviour
 
     public void OnStairs()
     {
-        _stairBlocks[NextStairCount].SetActive(true);
+        if (_type == LevelType.Simple)
+        {
+            _stairBlocks[NextStairCount].SetActive(true);
+        }
     }
+
+    public void EnablebPlatform()
+    {
+        _platforms[PlayerController._player.KilledEnemyCount-1].SetActive(true);
+    }
+
+    public void DisablePlatform()
+    {
+        _platforms[PlayerController._player.KilledEnemyCount].SetActive(false);
+    }
+
+    public LevelType GetLevelType()
+    {
+        return _type;
+    }
+
+    public enum LevelType { Simple, SpiralTower, Train, FlyingPlatforms, SwingPlatform}
 }

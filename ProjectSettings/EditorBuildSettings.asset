@@ -5,13 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FlatLevel.unity
     guid: 797a75017c59c7043be12534bd536683
   - enabled: 0
-    path: Assets/Scenes/Level 1.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/SpiralTower.unity
+    guid: c7e387dc203b6c2418b1cf219e0dc822
   - enabled: 0
-    path: Assets/Scenes/Level 2.unity
-    guid: f381c15c040fe524fae83f8afc0ab18d
+    path: Assets/Scenes/TrainLEvel.unity
+    guid: 032a8642de83c394d8e9bf146163d811
+  - enabled: 0
+    path: Assets/Scenes/FlyingPlatforms.unity
+    guid: e3edc4f28e014c648ab3769dba72c999
+  - enabled: 1
+    path: Assets/Scenes/Swing.unity
+    guid: a6ddb8feef6674f46a6e3fa4323c0d03
   m_configObjects: {}

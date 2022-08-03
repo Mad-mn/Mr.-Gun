@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject _enemyPrefab;
 
     public int EnemyChechedCount { get; set; }
+
     private List<Transform> _enemySpawnPoints;
 
     private void Awake()
@@ -24,7 +25,7 @@ public class EnemyController : MonoBehaviour
     {
         MainController.OnStartGame.AddListener(OnNextEnemy);
         MainController.OnStartGame.AddListener(SpawnEnemy);
-        _enemySpawnPoints = LevelController._levelController.GetEnemyDestinationPoints();
+        _enemySpawnPoints = LevelController._levelController.GetEnemySpawnPoints();
 
     }
 
@@ -35,7 +36,15 @@ public class EnemyController : MonoBehaviour
 
     public void ShotInEnemy()
     {
-        Invoke("SpawnEnemy", 1f);
+        if(LevelController._levelController.GetLevelType() == LevelController.LevelType.Simple)
+        {
+            Invoke("SpawnEnemy", 1f);
+        }
+        else
+        {
+            SpawnEnemy();
+        }
+        
         LevelController._levelController.EnableStairs(EnemyChechedCount +1);
 
         EnemyChechedCount++;
@@ -60,10 +69,10 @@ public class EnemyController : MonoBehaviour
        
         Vector3 spawnPoint;
        
-        spawnPoint = _enemySpawnPoints[PlayerController._player.CheckedPointCount].position;
+        spawnPoint = _enemySpawnPoints[PlayerController._player.KilledEnemyCount].position;
 
-        GameObject point = _enemySpawnPoints[PlayerController._player.CheckedPointCount].gameObject;
-        Destroy(point);
+        //GameObject point = _enemySpawnPoints[PlayerController._player.CheckedPointCount].gameObject;
+        //Destroy(point);
         GameObject enemyObj = Instantiate(_enemyPrefab, spawnPoint, Quaternion.identity);
         
         if (_enemies.Count == LevelController._levelController.GetSingleEnemyCount())  /// Створюємо боса
@@ -73,6 +82,7 @@ public class EnemyController : MonoBehaviour
             enemy.BossName = LevelController._levelController.GetBossName();
             enemy.BossHp = LevelController._levelController.GetBossHp();
         }
+        
         _enemies.Add(enemyObj);
 
        

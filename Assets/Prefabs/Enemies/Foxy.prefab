@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 798406753503791912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cactus (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2450727740722846590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_1_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6428479028687468445}
   - component: {fileID: 7007283556914825475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_r_leg
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2497138404542234640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_1_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804438396706470755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hand_R_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8271207784107234688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_ear_L_0_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1094900965253841689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyebrow_R_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8424097649438831575}
   - component: {fileID: 7987096010753081546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1443744289360392096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_R_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597364096799778844}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cactus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5005557344700722926}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_1_L_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5792776050183499072}
   - component: {fileID: 6553721625644564977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_endo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 323011297307975380}
   - component: {fileID: 1208702258341323445}
   - component: {fileID: 1409162416856934683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hip_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3692772742791586452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eye_R_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 2167228612937695044}
   - component: {fileID: 5256727865236088126}
   - component: {fileID: 1538078626070062589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foxy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -868,7 +868,7 @@ GameObject:
   - component: {fileID: 5764755866368001545}
   - component: {fileID: 1711502980302488858}
   - component: {fileID: 5769169088513259069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_upperarm_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -975,7 +975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8353242728219831800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyebrow_L_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1008,7 +1008,7 @@ GameObject:
   - component: {fileID: 44086298219543652}
   - component: {fileID: 2595500392956253047}
   - component: {fileID: 9074866015636426761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_upperarm_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1116,7 +1116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8404143179262351869}
   - component: {fileID: 248063278056548063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_eyepatch
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7719062324737103577}
   - component: {fileID: 1109075856559080135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_mask
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 2075809481085974589}
   - component: {fileID: 1999838655032469136}
   - component: {fileID: 3163747993192248536}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_neck
   m_TagString: EnemyHead
   m_Icon: {fileID: 0}
@@ -1467,7 +1467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5477712819452884928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1499,7 +1499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083319912370545853}
   - component: {fileID: 4289683711705640955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_hook
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1616,7 +1616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 929442725378098864}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_0_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1649,7 +1649,7 @@ GameObject:
   - component: {fileID: 6289820320079198559}
   - component: {fileID: 1414359812371238885}
   - component: {fileID: 6942894063541080136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pumpkin:Layer1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1732,7 +1732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3498442377255897902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1763,7 +1763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 166087280348649193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pumpkin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1797,7 +1797,7 @@ GameObject:
   - component: {fileID: 8268993552463407127}
   - component: {fileID: 5632160988018107136}
   - component: {fileID: 8716164036599268635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_lowerarm_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1904,7 +1904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5088911741155314190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_foot_L_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1937,7 +1937,7 @@ GameObject:
   - component: {fileID: 5110595606827441379}
   - component: {fileID: 8812667613647231332}
   - component: {fileID: 7934228594283998202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_spine_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2047,7 +2047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3331566804591655736}
   - component: {fileID: 8183555138901163984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_r_arm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2164,7 +2164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2748941798629799057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy.qc_skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2195,7 +2195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1799310850870408247}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_1_L_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2225,7 +2225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7250242434387963195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_ear_R_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2256,7 +2256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1638797716300806614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hand_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2290,7 +2290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2973803173734550927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_1_L_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2323,7 +2323,7 @@ GameObject:
   - component: {fileID: 2779655459421155204}
   - component: {fileID: 2442338605650695507}
   - component: {fileID: 3434068120098976124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_knee_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2430,7 +2430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 314679288148866551}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_foot_R_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2460,7 +2460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5068275940496244954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyebrow_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2491,7 +2491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1458206382747043058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hand_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2523,7 +2523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1142914914397438060}
   - component: {fileID: 8678537869435856793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_l_leg
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2643,7 +2643,7 @@ GameObject:
   - component: {fileID: 8078905377746602733}
   - component: {fileID: 3197822329780913979}
   - component: {fileID: 6175577642394973276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hip_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2750,7 +2750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8510080220037397690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_jaw_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2780,7 +2780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7654702897674572058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_0_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2811,7 +2811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1757052919647594873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyebrow_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2842,7 +2842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6036087659532226434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_endojaw
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2873,7 +2873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6820747884721494242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_1_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2904,7 +2904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3579709804396895380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_1_L_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2934,7 +2934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1758453033266374097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_head
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2976,7 +2976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1238855789357151275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_foot_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3009,7 +3009,7 @@ GameObject:
   - component: {fileID: 1851618318184027110}
   - component: {fileID: 5125834142814941357}
   - component: {fileID: 3971075382750106915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Group_002
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3089,7 +3089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7745877776136150161}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyepatch
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3120,7 +3120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6818043793448978366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_L_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3151,7 +3151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834110705324760943}
   - component: {fileID: 3719375043050680646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_l_arm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3268,7 +3268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8346033524632629763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eye_L_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3298,7 +3298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2917543786761349589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_ear_L_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3332,7 +3332,7 @@ GameObject:
   - component: {fileID: 3313660573660329740}
   - component: {fileID: 7375190465497758863}
   - component: {fileID: 7494268459742638766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_lowerarm_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3441,7 +3441,7 @@ GameObject:
   - component: {fileID: 5032196908507070482}
   - component: {fileID: 8249446390061934080}
   - component: {fileID: 2583330989268280096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cone.101
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3520,7 +3520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706695127666515207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_ear_R_0_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3551,7 +3551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 919998021371723654}
   - component: {fileID: 8356263966232943801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foxy_l_hand
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3669,7 +3669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2081667017492675518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_0_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3700,7 +3700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5052821520176617909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_endojaw_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3730,7 +3730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6397100579647232159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_foot_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3763,7 +3763,7 @@ GameObject:
   - component: {fileID: 7392316940409540497}
   - component: {fileID: 7341011934118548761}
   - component: {fileID: 7026930838351576568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3845,7 +3845,7 @@ GameObject:
   - component: {fileID: 3829714255042116531}
   - component: {fileID: 558281865986542052}
   - component: {fileID: 5507855293118070286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pelvis
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3907,7 +3907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7142005476485015822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eye_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3938,7 +3938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2075167687722466007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_1_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3969,7 +3969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 173685057829400302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_jaw
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4000,7 +4000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1587717154818064576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyepatch_end
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4030,7 +4030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9212914619742693869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_0_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4064,7 +4064,7 @@ GameObject:
   - component: {fileID: 4761219978519284158}
   - component: {fileID: 6384527676874756163}
   - component: {fileID: 3894641999564409925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_knee_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4171,7 +4171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2342256740819808778}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eye_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4200,13 +4200,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804438396706470755}
     m_Modifications:
+    - target: {fileID: 1362374548099114, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620780442430432, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642252848606250, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
       propertyPath: m_Name
       value: M1911
       objectReference: {fileID: 0}
     - target: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748277932983872, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765096765920448, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929811568968954, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
       propertyPath: m_RootOrder
@@ -4263,6 +4291,10 @@ PrefabInstance:
     - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 122.365005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871075607288777422, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}

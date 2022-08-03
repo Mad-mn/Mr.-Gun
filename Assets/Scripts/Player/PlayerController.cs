@@ -24,9 +24,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _gunBulletSpawn;
 
     public int CheckedPointCount { get; private set; }
+    public int KilledEnemyCount { get; set; }
     private List<Transform> _destinationPoints;
 
     public bool IsAiming { get; private set; }
+    public flyingPlatfirm FlyingPlatform { get; set; }
+    public bool IsOnPlatform { get; set; }
+    public bool IsDead { get; private set; }
+
+    public Swing Swing { get; set; }
+    public Transform SwingPosition { get; set; }
+    public bool IsOnSwing { get; set; }
+
+    private Vector3 _currentPosition;
+    
 
     private void Awake()
     {
@@ -38,7 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        KilledEnemyCount = 0;
     }
 
     private void Start()
@@ -46,6 +57,29 @@ public class PlayerController : MonoBehaviour
         _destinationPoints = LevelController._levelController.GetDestinationPoints();
         StopAiming();
         MainController.OnStartGame.AddListener(Aiming);
+    }
+
+    private void Update()
+    {
+        if (IsOnPlatform)
+        {
+            MoveWithPlatform();
+        }
+        if (IsOnSwing)
+        {
+            MoveWithSwing();
+        }
+    }
+
+    private void MoveWithPlatform()
+    {
+        _currentPosition = FlyingPlatform.gameObject.transform.position + new Vector3(0f, FlyingPlatform.transform.localScale.y / 4, 0f);
+        transform.position = FlyingPlatform.gameObject.transform.position + new Vector3(0f, FlyingPlatform.transform.localScale.y / 4, 0f);
+    }
+
+    private void MoveWithSwing()
+    {
+        transform.position = SwingPosition.position + new Vector3(0f, SwingPosition.transform.localScale.y / 4, 0f);
     }
 
     public void MoveToNextPoint(bool isBoss)
@@ -62,6 +96,10 @@ public class PlayerController : MonoBehaviour
 
     private void MoveToNext()
     {
+        if (Swing != null)
+        {
+            IsOnSwing = false;
+        }
         ChangeMovementAnimation();
         _agent.isStopped = false;
         if (_destinationPoints.Count > CheckedPointCount)
@@ -71,16 +109,28 @@ public class PlayerController : MonoBehaviour
 
                 StopAiming();
             }
-            _agent.destination = _destinationPoints[CheckedPointCount].position;
-            CheckedPointCount++;
+            if (_destinationPoints[KilledEnemyCount] != null)
+            {
+                _agent.destination = _destinationPoints[KilledEnemyCount].position;
+                CheckedPointCount++;
+            }
 
         }
     }
 
     public void HitOnPlayer(Bullet.BulletType bulletType, Vector3 direction, float force)   /// Гравець програв
     {
-        //OnDeatAnimation(bulletType);
-        StartCoroutine(OnRegdoll(direction, force));
+        if (bulletType == Bullet.BulletType.Beehive)
+        {
+            OnDeatAnimation(bulletType);
+           
+        }
+        else
+        {
+            StartCoroutine(OnRegdoll(direction, force));
+        }
+
+        IsDead = true;
         MainController._main.EndGame();
         StopAiming();
     }
@@ -100,9 +150,20 @@ public class PlayerController : MonoBehaviour
 
     public void Shot()
     {
-        Vector3 vector = _line.GetComponent<AimLine>().GetVector().normalized;
-        Vector3 spawnPosition = _line.GetComponent<AimLine>().GetBulletSpawnPosition();
-
+        Vector3 vector;
+        Vector3 spawnPosition;
+        if (LevelController._levelController.GetLevelType() == LevelController.LevelType.FlyingPlatforms)
+        {
+            vector = _line.GetComponent<AimLine>().GetVector().normalized;
+            spawnPosition = _line.GetComponent<AimLine>().GetBulletSpawnPosition();
+            float difference = _currentPosition.y - gameObject.transform.position.y;
+            spawnPosition = spawnPosition + new Vector3(0, difference, 0);
+        } 
+        else
+        {
+             vector = _line.GetComponent<AimLine>().GetVector().normalized;
+            spawnPosition = _line.GetComponent<AimLine>().GetBulletSpawnPosition();
+        }
         Bullet b = PlayerInfo._playerInfo._bullet.GetComponent<Bullet>();
         if (b.GetBulletType() == Bullet.BulletType.Gun)
         {
@@ -114,16 +175,20 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+           
             GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, spawnPosition, Quaternion.identity);
-
             bullet.GetComponent<Rigidbody>().AddForce(vector * _bulletSpeed, ForceMode.Impulse);
         }
-        
+        if (FlyingPlatform != null)
+        {
+            FlyingPlatform.StopMoving();
+        }
+       
     }
 
     private IEnumerator ShotFromGun(Vector3 direction, Vector3 spawn)
     {
-       
+        StopAiming();
         yield return new WaitForSeconds(0.5f);
         GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, spawn, Quaternion.identity);
 
@@ -157,28 +222,27 @@ public class PlayerController : MonoBehaviour
         _playerAnimator.SetBool("IsGun", true);
     }
 
-    
-    
     public void LookAtNextEnemy()
     {
         _agent.isStopped = true;
         if (EnemyController._enemyController.GetCurrentEnemy() != null)
         {
             Transform enemyPosition = EnemyController._enemyController.GetCurrentEnemy().transform;
-
-            StartCoroutine(LookAtEnemy(enemyPosition));
-            //transform.Rotate(new Vector3(transform.rotation.x, 180 * CheckedPointCount, transform.rotation.z));
+            if (LevelController._levelController.GetLevelType() != LevelController.LevelType.Train && LevelController._levelController.GetLevelType() != LevelController.LevelType.FlyingPlatforms && LevelController._levelController.GetLevelType() != LevelController.LevelType.SwingPlatform)
+            {
+                StartCoroutine(LookAtEnemy(enemyPosition));
+            }
+            if(LevelController._levelController.GetLevelType() == LevelController.LevelType.SwingPlatform)
+            {
+                transform.rotation = Quaternion.Euler(Vector3.zero);
+            }
+           
             Aiming();
         }
     }
 
     private IEnumerator LookAtEnemy(Transform enemy)
     {
-        //for (int i = 0; i < 4; i++)
-        //{
-        //    transform.LookAt(enemy, Vector3.up);
-        //    yield return new WaitForEndOfFrame();
-        //}
         Quaternion a = transform.rotation;
         Vector3 pos = new Vector3(enemy.position.x, transform.position.y, enemy.position.z);
         Vector3 heading = enemy.position - transform.position;
@@ -251,6 +315,10 @@ public class PlayerController : MonoBehaviour
                 break;
             case Bullet.BulletType.Pumpkin:
                 _playerAnimator.SetBool("IsPumpkin", true);
+                break;
+            case Bullet.BulletType.Beehive:
+                _playerAnimator.applyRootMotion = false;
+                _playerAnimator.SetBool("IsBeehive", true);
                 break;
         }
     }
