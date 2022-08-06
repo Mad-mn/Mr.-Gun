@@ -71,12 +71,12 @@ public class LevelController : MonoBehaviour
 
     public int GetSingleEnemyCount()
     {
-        return _enemyCountInFirstLevel + GetLevelId();
+        return _enemyCountInFirstLevel;
     }
 
     public float GetBossHp()
     {
-        return _firstLevelBossHp + GetLevelId();
+        return _firstLevelBossHp;
     }
 
     public string GetBossName()
@@ -100,7 +100,10 @@ public class LevelController : MonoBehaviour
 
     public void EnablebPlatform()
     {
-        _platforms[PlayerController._player.KilledEnemyCount-1].SetActive(true);
+        if (_platforms[PlayerController._player.KilledEnemyCount - 1])
+        {
+            _platforms[PlayerController._player.KilledEnemyCount - 1].SetActive(true);
+        }
     }
 
     public void DisablePlatform()

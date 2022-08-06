@@ -52,15 +52,21 @@ public class GameSessionController : MonoBehaviour
 
     public void KillTheBoss()
     {
-        Invoke("GoToNextLevel", 2f);
+        Invoke("OpenWeaponProggresPanel", 1f);
     }
 
     private void GoToNextLevel()
     {
-        if (SceneManager.sceneCount >= SceneManager.GetActiveScene().buildIndex+1)
+       
+        if (SceneManager.sceneCountInBuildSettings >= SceneManager.GetActiveScene().buildIndex+1)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    private void OpenWeaponProggresPanel()
+    {
+        CanvasController._canvasController.OpenWeaponProggresPanel();
     }
 
 }

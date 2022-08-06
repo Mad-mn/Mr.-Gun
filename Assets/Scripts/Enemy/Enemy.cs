@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject _firework;
     [SerializeField] private GameObject _flash;
     [SerializeField] private float _bulletForce;
+    [SerializeField] private float _bulletSpeed;
 
     //[SerializeField] private float _bossHp;
     //[SerializeField] private string _bossName;
@@ -144,7 +145,10 @@ public class Enemy : MonoBehaviour
             if (BossHp <= 0)
             {
                 KillTheBoss(bulletType, direction, force);
-                FlyingPlatform.StopMoving();
+                if (FlyingPlatform != null)
+                {
+                    FlyingPlatform.StopMoving();
+                }
             }
             else
             {
@@ -157,7 +161,10 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    FlyingPlatform.StopMoving();
+                    if (FlyingPlatform != null)
+                    {
+                        FlyingPlatform.StopMoving();
+                    }
                 }
                
             }
@@ -193,6 +200,8 @@ public class Enemy : MonoBehaviour
 
     public void KillTheBoss(Bullet.BulletType bulletType, Vector3 direction, float force)
     {
+        GameSessionController._sessionController.KillTheBoss();
+        isActive = false;
         if (bulletType == Bullet.BulletType.Beehive)
         {
             OnDeathAnimatioon(bulletType);
@@ -203,8 +212,7 @@ public class Enemy : MonoBehaviour
             StartCoroutine(OnRegdoll(direction, force));
         }
        
-        GameSessionController._sessionController.KillTheBoss();
-        isActive = false;
+        
     }
 
     
@@ -237,9 +245,9 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                GameObject bullet = Instantiate(PlayerInfo._playerInfo._bullet, _bulletSpawnPosition.position, Quaternion.identity);
+                GameObject bullet = Instantiate(WeaponController._weaponController.GetCurrentBullet(), _bulletSpawnPosition.position, Quaternion.identity);
 
-                bullet.GetComponent<Rigidbody>().AddForce(shotDirection * v, ForceMode.Impulse);
+                bullet.GetComponent<Rigidbody>().AddForce(shotDirection * _bulletSpeed, ForceMode.Impulse);
                 bullet.GetComponent<Bullet>().IsEnemyBullet = true;
             }
         }
@@ -286,10 +294,12 @@ public class Enemy : MonoBehaviour
         }
         ChangeMovementAnimation();
         IsOnPoint = false;
-        _agent.isStopped = false;
-        
-        _agent.destination = _destinationPoints[PlayerController._player.KilledEnemyCount].position;
-       
+        if (_agent.enabled)
+        {
+            _agent.isStopped = false;
+
+            _agent.destination = _destinationPoints[PlayerController._player.KilledEnemyCount].position;
+        }
     }
 
     public EnemyController.EnemyType GetEnemyType()

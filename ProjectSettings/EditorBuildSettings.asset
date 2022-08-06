@@ -5,19 +5,49 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/FlatLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/FlatLevel 1.unity
     guid: 797a75017c59c7043be12534bd536683
-  - enabled: 0
-    path: Assets/Scenes/SpiralTower.unity
+  - enabled: 1
+    path: Assets/Scenes/SpiralTower 1.unity
     guid: c7e387dc203b6c2418b1cf219e0dc822
-  - enabled: 0
-    path: Assets/Scenes/TrainLEvel.unity
+  - enabled: 1
+    path: Assets/Scenes/Train 1.unity
     guid: 032a8642de83c394d8e9bf146163d811
-  - enabled: 0
-    path: Assets/Scenes/FlyingPlatforms.unity
+  - enabled: 1
+    path: Assets/Scenes/FlyingPlatforms 1.unity
     guid: e3edc4f28e014c648ab3769dba72c999
   - enabled: 1
-    path: Assets/Scenes/Swing.unity
+    path: Assets/Scenes/Swing 1.unity
     guid: a6ddb8feef6674f46a6e3fa4323c0d03
+  - enabled: 1
+    path: Assets/Scenes/FlatLevel 2.unity
+    guid: 21560276f426318418c3ee2334e80bab
+  - enabled: 1
+    path: Assets/Scenes/SpiralTower 2.unity
+    guid: fb0b74c9f955ca541910921cce96d6ee
+  - enabled: 1
+    path: Assets/Scenes/Train 2.unity
+    guid: 9b5e60dd06a7475428574349bd50aab8
+  - enabled: 1
+    path: Assets/Scenes/FlyingPlatforms 2.unity
+    guid: 813c3978e256c6f4eb9e3e887c1c3cf2
+  - enabled: 1
+    path: Assets/Scenes/Swing 2.unity
+    guid: cd1de45b8a3a097469844d9cc54eb068
+  - enabled: 1
+    path: Assets/Scenes/FlatLevel 3.unity
+    guid: 38abbb296be41e6449bf0354ebbb205a
+  - enabled: 1
+    path: Assets/Scenes/SpiralTower 3.unity
+    guid: 295f56881e967b344a570038f1209d42
+  - enabled: 1
+    path: Assets/Scenes/Train 3.unity
+    guid: a6def18c85387d248959157ae5d9b927
+  - enabled: 1
+    path: Assets/Scenes/FlyingPlatforms 3.unity
+    guid: 1dd65f8c0e49f784d8930f0b7c1a377e
+  - enabled: 1
+    path: Assets/Scenes/Swing 3.unity
+    guid: 26951637b49961448b9901a9780e75fd
   m_configObjects: {}

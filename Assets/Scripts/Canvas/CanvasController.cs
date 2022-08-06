@@ -13,6 +13,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject _bossHpPanel;
     [SerializeField] private GameObject _losePanel;
     [SerializeField] private GameObject _levelProggressBar;
+    [SerializeField] private GameObject _weaponProggresPanel;
 
     private BossHpBar _bossHpBar;
     private LevelProggressBar _lPB;
@@ -80,5 +81,10 @@ public class CanvasController : MonoBehaviour
         {
             _levelProggressBar.SetActive(false);
         }
+    }
+
+    public void OpenWeaponProggresPanel()
+    {
+        _weaponProggresPanel.SetActive(true);
     }
 }

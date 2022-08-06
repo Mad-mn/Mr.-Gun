@@ -183,6 +183,7 @@ MonoBehaviour:
   _firework: {fileID: 7061147532057349430}
   _flash: {fileID: 5854982103954560439}
   _bulletForce: 50
+  _bulletSpeed: 25
 --- !u!65 &236723804
 BoxCollider:
   m_ObjectHideFlags: 0

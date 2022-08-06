@@ -63,7 +63,14 @@ public class flyingPlatfirm : MonoBehaviour
         }
         else
         {
-           
+            if (_enemy != null)
+            {
+                _enemy.IsOnPlatform = false;
+                if (_enemy.GetEnemyType() == EnemyController.EnemyType.Boss)
+                {
+                    _enemy.MoveToNextPoint();
+                }
+            }
             while (true)
             {
                 Vector3 direction = (_startPoint - transform.localPosition).normalized;
@@ -77,11 +84,7 @@ public class flyingPlatfirm : MonoBehaviour
                 {
                     if(_enemy!= null )
                     {
-                        _enemy.IsOnPlatform = false;
-                        if (_enemy.GetEnemyType() == EnemyController.EnemyType.Boss) 
-                        {
-                            _enemy.MoveToNextPoint();
-                        }
+                       
                     }
                     else
                     {
