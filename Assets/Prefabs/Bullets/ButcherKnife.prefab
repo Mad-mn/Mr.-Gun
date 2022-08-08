@@ -68,6 +68,7 @@ MonoBehaviour:
   _bulletCollider: {fileID: 3132624788513346774}
   _poisinCloud: {fileID: 0}
   _bulletAnimation: {fileID: 3684692006824161721}
+  _bulletForce: 50
 --- !u!1 &5428687693472581053
 GameObject:
   m_ObjectHideFlags: 0

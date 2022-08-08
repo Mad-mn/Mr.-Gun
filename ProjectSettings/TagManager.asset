@@ -8,14 +8,15 @@ TagManager:
   - Enemy
   - EnemyHead
   - ExitBulletZone
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 

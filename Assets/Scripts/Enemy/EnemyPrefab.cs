@@ -7,6 +7,8 @@ public class EnemyPrefab : MonoBehaviour
     [SerializeField] private Transform _headBone, _bodyBone;
     [SerializeField] private GameObject _cactusInAss;
     [SerializeField] private GameObject _pumpkin;
+    [SerializeField] private Rigidbody _regdollRb;
+    [SerializeField] private GameObject _gun;
 
     public Transform GetHeadBone()
     {
@@ -26,5 +28,15 @@ public class EnemyPrefab : MonoBehaviour
     public void EnablePumpkin()
     {
         _pumpkin.SetActive(true);
+    }
+
+    public Rigidbody GetRegdollRigidbody()
+    {
+        return _regdollRb;
+    }
+
+    public GameObject GetGun()
+    {
+        return _gun;
     }
 }

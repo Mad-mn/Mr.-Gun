@@ -11,7 +11,7 @@ public class LevelProggressBar : MonoBehaviour
 
     private void Start()
     {
-        _levelStep = 1f /(3f + (float)LevelController._levelController.GetLevelId());
+        _levelStep = 1f / (float)LevelController._levelController.GetSingleEnemyCount();
         _fillImage.fillAmount = 0;
     }
 

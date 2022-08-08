@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Collider _bulletCollider;
     [SerializeField] private GameObject _poisinCloud;
     [SerializeField] private Animation _bulletAnimation;
+    [SerializeField] private float _bulletForce;
+    [SerializeField] private GameObject _granadeParticle;
 
     private bool _isActive = true;
     private Rigidbody _rb;
@@ -66,7 +68,7 @@ public class Bullet : MonoBehaviour
                     enemy.EnablePumpkin();
                 }
                 CanvasController._canvasController.AddCoins(_headShotCoinPrice);
-                enemy.ShotOnEnemy(_headShotDamage, _type);
+                enemy.ShotOnEnemy(_headShotDamage, _type, transform.forward, _bulletForce);
                 GameSessionController._sessionController.ShotOnEnemy(true);
                 SetBoneForBullet(collision.gameObject, true, true);
                 CreatePoisonCloud(enemy.GetHeadBone());
@@ -74,7 +76,7 @@ public class Bullet : MonoBehaviour
             }
             else if (collision.gameObject.CompareTag("Enemy") && !IsEnemyBullet)
             {
-                Enemy enemy = collision.transform.GetComponent<Enemy>();
+                Enemy enemy = collision.transform.GetComponentInParent<Enemy>();
                 if (_type == BulletType.Cactus)
                 {
                     enemy.CactusInAss();
@@ -91,7 +93,7 @@ public class Bullet : MonoBehaviour
                 {
                     enemy.EnablePumpkin();
                 }
-                enemy.ShotOnEnemy(_bodyShotDamage, _type);
+                enemy.ShotOnEnemy(_bodyShotDamage, _type, transform.forward, _bulletForce);
                 GameSessionController._sessionController.ShotOnEnemy(false);
                 SetBoneForBullet(collision.gameObject, true, false);
                 CreatePoisonCloud(enemy.GetHeadBone());
@@ -106,8 +108,15 @@ public class Bullet : MonoBehaviour
                 _rb.isKinematic = true;
                           
             }
-            
-            if (_type == BulletType.Firework || _type == BulletType.GreenBottle || _type == BulletType.Cactus || _type == BulletType.Banana || _type == BulletType.Onion || _type == BulletType.Flash || _type == BulletType.Pumpkin)
+            if (_type == BulletType.Granade)
+            {
+                GameObject granade = Instantiate(_granadeParticle, transform.position, Quaternion.identity);
+                Destroy(granade, 1f);
+            }
+
+            if (_type == BulletType.Firework || _type == BulletType.GreenBottle || _type == BulletType.Cactus
+                || _type == BulletType.Banana || _type == BulletType.Onion || _type == BulletType.Flash
+                || _type == BulletType.Pumpkin || _type == BulletType.Granade || _type == BulletType.Beehive)
             {
                 Destroy(gameObject);
             }
@@ -115,6 +124,11 @@ public class Bullet : MonoBehaviour
             {
                 _bulletAnimation.Stop();
             }
+            if(LevelController._levelController.GetLevelType() == LevelController.LevelType.FlyingPlatforms)
+            {
+                LevelController._levelController.EnablebPlatform();
+            }
+           
         }
         if(_isActive && IsEnemyBullet && collision.gameObject.CompareTag("Player"))
         {
@@ -135,7 +149,7 @@ public class Bullet : MonoBehaviour
             {
                 PlayerController._player.EnablePumpkin();
             }
-            PlayerController._player.HitOnPlayer(_type);
+            PlayerController._player.HitOnPlayer(_type, transform.forward, _bulletForce);
             SetBoneForBullet(collision.gameObject, false, true);
             CreatePoisonCloud(PlayerController._player.GetHeadBone());
             if (_type == BulletType.ButcherKnife || _type == BulletType.Cake)
@@ -143,8 +157,15 @@ public class Bullet : MonoBehaviour
                 _rb.isKinematic = true;
                
             }
-            
-            if (_type == BulletType.Firework || _type == BulletType.GreenBottle || _type == BulletType.Cactus || _type == BulletType.Banana || _type == BulletType.Onion || _type == BulletType.Flash || _type == BulletType.Pumpkin)
+            if (_type == BulletType.Granade)
+            {
+                GameObject granade = Instantiate(_granadeParticle, transform.position, Quaternion.identity);
+                Destroy(granade, 1f);
+            }
+
+            if (_type == BulletType.Firework || _type == BulletType.GreenBottle || _type == BulletType.Cactus
+                || _type == BulletType.Banana || _type == BulletType.Onion || _type == BulletType.Flash
+                || _type == BulletType.Pumpkin || _type == BulletType.Granade || _type == BulletType.Beehive)
             {
                 Destroy(gameObject);
             }
@@ -153,8 +174,6 @@ public class Bullet : MonoBehaviour
                 _bulletAnimation.Stop();
             }
         }
-        
-        
     }
 
     public void SetBoneForBullet(GameObject parent, bool isEnemy, bool isHeadshot)
@@ -172,7 +191,7 @@ public class Bullet : MonoBehaviour
                 }
                 else
                 {
-                    enemy = parent.GetComponent<Enemy>();
+                    enemy = parent.GetComponentInParent<Enemy>();
                 }
                 enemy.SetBoneForBullet(gameObject, isHeadshot);
             }
@@ -211,5 +230,5 @@ public class Bullet : MonoBehaviour
         return _type;
     }
 
-    public enum BulletType { BoxingGlove, ButcherKnife, Cake, Cactus, BlueBottle, GreenBottle, Firework, Banana, Onion, Flash, Pumpkin}
+    public enum BulletType { BoxingGlove, ButcherKnife, Cake, Cactus, BlueBottle, GreenBottle, Firework, Banana, Onion, Flash, Pumpkin, Beehive, Granade, Brick, Gun}
 }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2336360023597930932}
   - component: {fileID: 7798124296802632817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Eyebrows
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,9 +140,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3480789951887857411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_endojaw_B_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,9 +171,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3965713976007415010}
   - component: {fileID: 5184581443432346131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Eyelids
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,9 +302,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8322894028832178373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_1_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,9 +333,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4312716053695848598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_0_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,9 +364,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542766387293765033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_1_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,9 +394,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1939902154784744913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pumpkin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,9 +428,9 @@ GameObject:
   - component: {fileID: 1457586266201624231}
   - component: {fileID: 8003895108004385957}
   - component: {fileID: 8898035724768550695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_knee_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -536,9 +536,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2172452376263942851}
   - component: {fileID: 6037394154111611989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Ears
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -670,9 +670,9 @@ GameObject:
   - component: {fileID: 1562860481078597953}
   - component: {fileID: 9139033041009962851}
   - component: {fileID: 6447044926468390604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Group_002
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -751,9 +751,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3277056830091058911}
   - component: {fileID: 74952661798965777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_LowerArms
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -881,9 +881,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5090917879993984862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_microphone_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -911,9 +911,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5993513591988039546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_0_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -942,9 +942,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5528005651322380322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_ear_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -972,9 +972,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3926225539815548749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_0_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1003,9 +1003,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2452368081778306763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_1_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1034,9 +1034,9 @@ GameObject:
   m_Component:
   - component: {fileID: 60117800084974993}
   - component: {fileID: 14166126019658722}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Buttons
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1164,9 +1164,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5883120018673285203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_0_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1196,9 +1196,9 @@ GameObject:
   - component: {fileID: 3275177892628608930}
   - component: {fileID: 7894953204752427331}
   - component: {fileID: 8394341388887482894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pumpkin:Layer1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1279,9 +1279,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7833943411726776109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_mask
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1314,9 +1314,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4147410295699939265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_ear_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1344,9 +1344,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5224777757866979121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eye_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1374,9 +1374,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3478315474755289514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_0_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1405,9 +1405,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3301429048915014563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_1_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1436,9 +1436,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9020512179404546971}
   - component: {fileID: 7302002860036550372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Torso
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1567,9 +1567,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6944300962063152306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_1_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1598,9 +1598,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1892676410438757691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_ear_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1632,9 +1632,9 @@ GameObject:
   - component: {fileID: 6522528048548981562}
   - component: {fileID: 3408456042088429336}
   - component: {fileID: 6532513289316288301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_lowerArm_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1740,9 +1740,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1305231090138835020}
   - component: {fileID: 1786225711954288731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_EndoHead
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1873,9 +1873,9 @@ GameObject:
   m_Component:
   - component: {fileID: 59390907500609922}
   - component: {fileID: 7031648217137396909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_EndoArms
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2005,9 +2005,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1799066059578886664}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_0_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2036,9 +2036,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2576127061021150384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyebrow_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2067,9 +2067,9 @@ GameObject:
   m_Component:
   - component: {fileID: 228088958625335900}
   - component: {fileID: 1401913666634741709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Mask
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2200,9 +2200,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8158494863026972781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_1_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2230,9 +2230,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3290900375690906046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyebrow_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2264,9 +2264,9 @@ GameObject:
   - component: {fileID: 1232510654561544933}
   - component: {fileID: 1766569193855270720}
   - component: {fileID: 3582241851494086765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_upperArm_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2371,9 +2371,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6536833787060809482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_foot_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2402,9 +2402,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2186475848666032076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_1_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2432,9 +2432,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8156236328849769795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_1_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2463,9 +2463,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3364741227497190665}
   - component: {fileID: 2599622539616623111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Hands
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2595,9 +2595,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1487006216897074476}
   - component: {fileID: 1331139814145819204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Hips
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2728,9 +2728,9 @@ GameObject:
   - component: {fileID: 5284987164571583948}
   - component: {fileID: 645914883628536200}
   - component: {fileID: 1215558424571266944}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_upperArm_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2835,9 +2835,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4901814329298938089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_0_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2867,9 +2867,9 @@ GameObject:
   m_Component:
   - component: {fileID: 983917244292318845}
   - component: {fileID: 818332892512380783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Knees
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2999,9 +2999,9 @@ GameObject:
   - component: {fileID: 4311984480109921902}
   - component: {fileID: 7869780715516124180}
   - component: {fileID: 4187433852563805216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Freddy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3081,6 +3081,8 @@ MonoBehaviour:
   _bodyBone: {fileID: 7435409395350460755}
   _cactusInAss: {fileID: 8039536745843653553}
   _pumpkin: {fileID: 524686929429557251}
+  _regdollRb: {fileID: 4761334869042521349}
+  _gun: {fileID: 6110708315174232457}
 --- !u!1 &3539170873626384645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,9 +3092,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2409625167708395919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_1_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3121,9 +3123,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6633091074564374188}
   - component: {fileID: 2609331582007285641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Eyes3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3252,9 +3254,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5535940634464930917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cactus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3283,9 +3285,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3511694152448299435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_endojaw_T
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3314,9 +3316,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2006965649982232689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eye_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3345,9 +3347,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7292092204930924362}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_1_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3375,9 +3377,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8040623549388245417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_microphone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3406,9 +3408,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5494904405465274351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_1_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3437,9 +3439,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5579340591480778221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_0_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3456,6 +3458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6944300962063152306}
+  - {fileID: 6114205746207130013}
   m_Father: {fileID: 6850255384171126497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3468,9 +3471,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5776584257579582356}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_1_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3500,9 +3503,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3165442054979403727}
   - component: {fileID: 2172906161587037547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Eyes
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3630,9 +3633,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5743354225365040671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_1_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3661,9 +3664,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4876566755299764083}
   - component: {fileID: 8246204171400176303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Pelvis
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3791,9 +3794,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3330206637229344273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_0_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3822,9 +3825,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6296430049883543506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_foot_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3852,9 +3855,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 950416453015935678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_endojaw_T_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3882,9 +3885,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6449604110284294711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_0_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3913,9 +3916,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3189715701052800190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hat_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3943,9 +3946,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8197381477718483235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyebrow_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3973,9 +3976,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8763163281616408215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eye_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4005,9 +4008,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1609692989062763944}
   - component: {fileID: 1762460264992375589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Shoulders
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4138,9 +4141,9 @@ GameObject:
   - component: {fileID: 7894577241078437241}
   - component: {fileID: 8769641759703481729}
   - component: {fileID: 1365733288257267402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_neck
-  m_TagString: Untagged
+  m_TagString: EnemyHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4244,9 +4247,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4252227415210233431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_middle_1_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4275,9 +4278,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1136290584668810513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_jaw
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4306,9 +4309,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2758878635993537505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_0_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4336,9 +4339,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5605895407104740626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_1_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4366,9 +4369,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7304218211658960234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_1_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4398,9 +4401,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9031750669895592706}
   - component: {fileID: 5024078267934327327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Bowtie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4529,9 +4532,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4032228801127362073}
   - component: {fileID: 2705201798174030382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Eyes2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4662,9 +4665,9 @@ GameObject:
   - component: {fileID: 2684587407182720812}
   - component: {fileID: 3823904974477129092}
   - component: {fileID: 6050183037109526967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4742,9 +4745,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7703610755127676560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_foot_R_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4772,9 +4775,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6850255384171126497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hand_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4810,9 +4813,9 @@ GameObject:
   - component: {fileID: 4143693773689880007}
   - component: {fileID: 7680296181267512640}
   - component: {fileID: 7301303752824725052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_lowerArm_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4917,9 +4920,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6157179875942412737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_endojaw_B
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4948,9 +4951,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5145338776315811568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4980,9 +4983,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6917867216223223083}
   - component: {fileID: 3779258183660601521}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Microphone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5113,9 +5116,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 883553543474578096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_index_1_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5144,9 +5147,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7913602713166991273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hand_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5178,9 +5181,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6284779524744358894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5212,9 +5215,9 @@ GameObject:
   - component: {fileID: 5368142657260993998}
   - component: {fileID: 5927546677829949845}
   - component: {fileID: 8655193773171206625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_spine_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5321,9 +5324,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238065318153856901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eye_L_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5351,9 +5354,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8614109701891235383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_ear_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5382,9 +5385,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5362941862670988852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cactus (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5415,9 +5418,9 @@ GameObject:
   - component: {fileID: 8756798062751152716}
   - component: {fileID: 5925000639845060631}
   - component: {fileID: 4761334869042521349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pelvis
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5464,7 +5467,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5478,9 +5481,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7317934655291386078}
   - component: {fileID: 8168049556607592986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Jaw
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5613,9 +5616,9 @@ GameObject:
   - component: {fileID: 9120326496276899947}
   - component: {fileID: 7795198876810403606}
   - component: {fileID: 1507579868787975329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hip_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5723,9 +5726,9 @@ GameObject:
   - component: {fileID: 2986282938612856021}
   - component: {fileID: 8181897786168525843}
   - component: {fileID: 9202563012192367602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_knee_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5833,9 +5836,9 @@ GameObject:
   - component: {fileID: 3023370413421738910}
   - component: {fileID: 281472627793526121}
   - component: {fileID: 1805805810439125797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_hip_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5941,9 +5944,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3954219699405247504}
   - component: {fileID: 7587511891342036630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_EndoLegs
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6073,9 +6076,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6623317358427989850}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_0_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6104,9 +6107,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 684747427548178467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_jaw_end
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6134,9 +6137,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8453212037953148149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyelid_1_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6165,9 +6168,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4322515229218155355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_head
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6206,9 +6209,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3793989731862249724}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_thumb_1_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6237,9 +6240,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3571389240970095718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_pinky_1_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6269,9 +6272,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8394059894178365370}
   - component: {fileID: 5815061755401673828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_UpperArms
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6399,9 +6402,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759344432810631028}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_eyebrow_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6430,9 +6433,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6093477884158026538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bip_foot_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6462,9 +6465,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3645468034226321539}
   - component: {fileID: 1401798278508379680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_EndoTorso
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6594,9 +6597,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7929861027495911100}
   - component: {fileID: 7386252701282337279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Hat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6725,9 +6728,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3866023173539700793}
   - component: {fileID: 2626220230970314042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnWFreddy_Feet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6857,9 +6860,9 @@ GameObject:
   - component: {fileID: 1725992622972056117}
   - component: {fileID: 1280406605806658402}
   - component: {fileID: 2556322752987226047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cone.101
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6927,3 +6930,118 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &6110150775558799063
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5579340591480778221}
+    m_Modifications:
+    - target: {fileID: 1362374548099114, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620780442430432, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642252848606250, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Name
+      value: M1911
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748277932983872, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765096765920448, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929811568968954, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.021
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.17808649
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6465254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.73544896
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.096980035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.027
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 157.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 81.619
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871075607288777422, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+--- !u!4 &6114205746207130013 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4952727429218122, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+  m_PrefabInstance: {fileID: 6110150775558799063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6110708315174232457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+  m_PrefabInstance: {fileID: 6110150775558799063}
+  m_PrefabAsset: {fileID: 0}

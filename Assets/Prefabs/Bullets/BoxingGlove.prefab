@@ -144,7 +144,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!114 &930940287602962556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +162,7 @@ MonoBehaviour:
   _bodyShotDamage: 1
   _type: 0
   _bulletCollider: {fileID: 7481245564182598923}
+  _poisinCloud: {fileID: 0}
+  _bulletAnimation: {fileID: 0}
+  _bulletForce: 50
+  _granadeParticle: {fileID: 0}
